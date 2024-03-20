@@ -261,6 +261,12 @@ def _load_data(dataset=None, data_path='./data_download/'):
         csv_file_path = download_url(
                 "https://s3-us-west-1.amazonaws.com/deepchem.io/datasets/molnet_publish/FreeSolv.zip",
                 data_path, md5)
+                
+    elif(dataset == 'AICO2'): # SMILES is second column
+        task = 'regression'
+        target = ["Free_energy_of_molecule"]
+        md5 = "8d681babd239b15e2f8b2d29f025577a"
+        csv_file_path = '/content/AugLiChem/AI_CO2_smiles_gcn.csv'
 
     elif(dataset == 'ESOL'): # SMILES is last column
         task = 'regression'
